@@ -4,18 +4,18 @@ FOOD_POS = [-280, -260, -240, -220, -200, -180, -160, -140, -120, -100, -80, -60
             120, 140, 160, 180, 200, 220, 240, 260, 280]
 
 
-class Food:
+class Food(Turtle):
     def __init__(self):
-        self.food = Turtle(shape="circle")
-        self.food.color("aquamarine")
-        self.food.width(1)
-        self.food.pu()
+        super().__init__()
+        self.shape("circle")
+        self.shapesize(stretch_len=0.5, stretch_wid=0.5)
+        self.pu()
+        self.color("aquamarine")
+        self.speed("fastest")
+        self.refresh()
 
-    def rand_pos(self):
-        xcor = random.choice(FOOD_POS)
-        ycor = random.choice(FOOD_POS)
-        return xcor, ycor
+    def refresh(self):
+        ran_x = random.randint(-280, 280)
+        ran_y = random.randint(-280, 280)
+        self.setpos(ran_x, ran_y)
 
-    def spawn(self, cords):
-        self.food.setpos(cords)
-        self.food.dot()

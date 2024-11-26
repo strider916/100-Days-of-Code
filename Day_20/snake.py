@@ -1,7 +1,7 @@
 from turtle import Turtle
-from food import Food
+
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
-MOVE_DISTANCE = 10
+MOVE_DISTANCE = 19
 UP = 90
 DOWN = 270
 LEFT = 180
@@ -52,5 +52,4 @@ class Snake:
         new_segment.color("white")
         new_segment.setpos(self.segments[len(self.segments) - 1].pos())
         self.segments.append(new_segment)
-
 
