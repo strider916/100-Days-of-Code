@@ -1,6 +1,11 @@
-from turtle import Turtle, Screen
+from turtle import Turtle
+from food import Food
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
-MOVE_DISTANCE = 20
+MOVE_DISTANCE = 10
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 
 class Snake:
@@ -26,20 +31,26 @@ class Snake:
         self.head.forward(MOVE_DISTANCE)
 
     def up(self):
-        self.head.setheading(90)
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
 
     def down(self):
-        self.head.setheading(270)
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)
 
     def left(self):
-        self.head.setheading(180)
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
 
     def right(self):
-        self.head.setheading(0)
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
 
-    def add(self):
+    def eat(self):
         new_segment = Turtle(shape="square")
         new_segment.pu()
         new_segment.color("white")
+        new_segment.setpos(self.segments[len(self.segments) - 1].pos())
         self.segments.append(new_segment)
+
 

@@ -10,9 +10,11 @@ class Listener:
         screen.title("Snake Game")
         screen.tracer(0)
 
-    def listen(self):
-        self.listen()
+    def control(self):
         self.onkey(key="Up", fun=snake.up)
         self.onkey(key="Down", fun=snake.down)
         self.onkey(key="Left", fun=snake.left)
         self.onkey(key="Right", fun=snake.right)
+
+    def update(self):
+        self.update()
