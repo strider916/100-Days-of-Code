@@ -23,6 +23,13 @@ class Snake:
             new_segment.goto(pos)
             self.segments.append(new_segment)
 
+    def extend(self):
+        new_segment = Turtle(shape="square")
+        new_segment.pu()
+        new_segment.color("white")
+        new_segment.setpos(self.segments[-1].pos())
+        self.segments.append(new_segment)
+
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):
             new_x = self.segments[seg_num - 1].xcor()
@@ -45,11 +52,4 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
-
-    def eat(self):
-        new_segment = Turtle(shape="square")
-        new_segment.pu()
-        new_segment.color("white")
-        new_segment.setpos(self.segments[len(self.segments) - 1].pos())
-        self.segments.append(new_segment)
 

@@ -1,7 +1,5 @@
 from turtle import Turtle
 import random
-FOOD_POS = [-280, -260, -240, -220, -200, -180, -160, -140, -120, -100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100,
-            120, 140, 160, 180, 200, 220, 240, 260, 280]
 
 
 class Food(Turtle):
@@ -15,7 +13,8 @@ class Food(Turtle):
         self.refresh()
 
     def refresh(self):
-        ran_x = random.randint(-280, 280)
-        ran_y = random.randint(-280, 280)
+        ran_x = random.randrange(-280, 280, 18)
+        ran_y = random.randrange(-280, 280, 18)
+
         self.setpos(ran_x, ran_y)
 
