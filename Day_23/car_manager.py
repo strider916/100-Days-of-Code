@@ -22,8 +22,7 @@ class CarManager:
     def move_cars(self):
         for car in self.all_cars:
             x_pos = car.xcor() - MOVE_INCREMENT
-            y_pos = car.ycor()
-            car.goto(x_pos, y_pos)
+            car.goto(x_pos, car.ycor())
 
     def destroy(self):
         for car in self.all_cars:
