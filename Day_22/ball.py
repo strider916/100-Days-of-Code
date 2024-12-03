@@ -1,4 +1,6 @@
 from turtle import Turtle
+BALL_SPEED = 5
+MOVE_SPEED = .02
 
 
 class Ball(Turtle):
@@ -8,8 +10,9 @@ class Ball(Turtle):
         self.shape("circle")
         self.color("white")
         self.pu()
-        self.x_move = 5
-        self.y_move = 5
+        self.x_move = BALL_SPEED
+        self.y_move = BALL_SPEED
+        self.move_speed = MOVE_SPEED
 
     def move(self):
         new_x = self.xcor() + self.x_move
@@ -24,5 +27,5 @@ class Ball(Turtle):
 
     def reset_position(self):
         self.goto(0, 0)
-        self.bounce_x()
+        self.move_speed = MOVE_SPEED
 
