@@ -13,9 +13,6 @@
 #
 #     print(temperatures)
 
-import pandas
-
-
 # data = pandas.read_csv("weather_data.csv")
 # print(data["temp"])
 #
@@ -32,10 +29,18 @@ import pandas
 
 
 # Create dataframe from scratch
-data_dict = {
-    "students": ["Angela", "Nick", "James"],
-    "scores": [30, 25, 28]
-}
+# data_dict = {
+#     "students": ["Angela", "Nick", "James"],
+#     "scores": [30, 25, 28]
+# }
+#
+# data = pandas.DataFrame(data_dict)
+# print(data)
 
-data = pandas.DataFrame(data_dict)
-print(data)
+import pandas
+
+
+data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data_20241203.csv")
+data.rename(columns={"Primary Fur Color": "fur_color"}, inplace=True)
+
+print(data.fur_color == "Gray")
