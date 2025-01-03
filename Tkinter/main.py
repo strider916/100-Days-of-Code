@@ -31,7 +31,7 @@ images = [
 results = []
 start_time = 0.0
 
-# Logging Config
+# Logging Startup Config
 logging.basicConfig(
     filename="",
     filemode="a",
@@ -144,10 +144,11 @@ def validation_check():
 def execute():
     global start_time
     start_time = time.time()
-    logging.warning(f'------------------------------ Start Runtime Log ------------------------------')
+    logging.warning(f'------------------------------ Start runtime Log ------------------------------')
     # some_function(8)
     print(tacacs_user.get())
     print(tacacs_pwd.get())
+    time.sleep(1)
     print(dnac_ro_pwd.get())
     print(local_pwd.get())
     root.quit()
@@ -195,4 +196,4 @@ root.mainloop()
 
 # Final log Data
 logging.warning(f'Process finished in {round((time.time() - start_time), 2)} seconds.')
-logging.warning(f'------------------------------- End Runtime Log --------------------------------')
+logging.warning(f'------------------------------- End runtime Log --------------------------------')
