@@ -1,7 +1,7 @@
 import customtkinter
-import time
 import logging
 import threading
+import time
 from queue import Queue
 from PIL import Image
 
@@ -31,9 +31,9 @@ images = [
 results = []
 start_time = 0.0
 
-# Logging Startup Config
+# Logging Config
 logging.basicConfig(
-    filename="",
+    filename="C:\\Users\\T\\PycharmProjects\\100-Days-of-Code\\Tkinter\\log.log",
     filemode="a",
     format="{asctime} - {levelname} - {message}",
     style="{",
