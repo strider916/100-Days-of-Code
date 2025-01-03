@@ -31,9 +31,6 @@ images = [
 results = []
 start_time = 0.0
 
-# Threading Variables
-queue = Queue()
-
 # Logging Config
 logging.basicConfig(
     filename="",
@@ -43,8 +40,10 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M"
     )
 
-
 # Multithreading Functions
+queue = Queue()
+
+
 def worker():
     while not queue.empty():
         host = queue.get()
