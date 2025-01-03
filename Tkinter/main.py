@@ -193,7 +193,6 @@ generate_interface()
 root.protocol("WM_DELETE_WINDOW", on_closing)
 root.mainloop()
 
-
 # Final log Data
 logging.warning(f'Process finished in {round((time.time() - start_time), 2)} seconds.')
 logging.warning(f'------------------------------- End runtime Log --------------------------------')
