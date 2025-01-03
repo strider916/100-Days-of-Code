@@ -150,7 +150,7 @@ def execute():
     print(tacacs_pwd.get())
     print(dnac_ro_pwd.get())
     print(local_pwd.get())
-    return True
+    root.quit()
 
 
 # noinspection PyGlobalUndefined
